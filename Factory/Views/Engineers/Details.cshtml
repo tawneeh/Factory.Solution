@@ -23,14 +23,14 @@ else
     @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" value="Delete" class="btn btn-light"/>
+      <input type="submit" value="Delete" class="btn btn-success btn-xs" />
     }
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Home", "Index", "Home", null, null, new { @class="button" })</p>
-<p>@Html.ActionLink("Back to the Engineer List", "Index")</p>
-<p>@Html.ActionLink("Edit this Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete this Engineer", "Delete", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home", null, new { @class="button" })</p>
+<p>@Html.ActionLink("Engineer List", "Index", null, null, new { @class="button" })</p>
+<p>@Html.ActionLink("Edit this Engineer", "Edit", new { id = Model.EngineerId }, new { @class="button" })</p>
+<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId }, new { @class="button" })</p>
+<p>@Html.ActionLink("Delete this Engineer", "Delete", new { id = Model.EngineerId }, new { @class="button" })</p>
