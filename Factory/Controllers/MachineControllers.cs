@@ -69,6 +69,17 @@ namespace Factory.Controllers
       return View(thisMachine);
     }
 
+    [HttpPost]
+    public ActionResult AddEngineer(Machine machine, int EngineerId)
+    {
+        if (EngineerId != 0)
+        {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+        }
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
     public ActionResult Delete(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
