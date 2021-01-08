@@ -14,6 +14,6 @@
     @Html.LabelFor(model => model.Status)
     @Html.TextBoxFor(model => model.Status)
 
-    <input type="submit" value="Add new Machine" class="btn btn-light" />
+    <input type="submit" value="Add new Machine" class="btn btn-success btn-xs" />
 }
-<p>@Html.ActionLink("Show all Machines", "Index")</p>
+<p>@Html.ActionLink("Machine List", "Index", null, null, new { @class="button" })</p>

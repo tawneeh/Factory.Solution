@@ -17,7 +17,7 @@
     @Html.LabelFor(model => model.Status)
     @Html.EditorFor(model => model.Status)
 
-    <input type="submit" value="Save" class="btn btn-light" />
+    <input type="submit" value="Save" class="btn btn-success btn-xs" />
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list", "Index", null, null, new { @class="button" })</p>

@@ -15,7 +15,7 @@
     @Html.Label("Select Engineer")
     @Html.DropDownList("EngineerId")
 
-    <input type="submit" value="Save" class="btn btn-light" />
+    <input type="submit" value="Save" class="btn btn-success btn-xs" />
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list", "Index", null, null, new { @class="buton" })</p>
