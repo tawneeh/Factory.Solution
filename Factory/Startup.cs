@@ -1,4 +1,4 @@
-using TODO.Models;
+using Factory.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace TODO
+namespace Factory
 {
   public class Startup
   {
@@ -25,7 +25,7 @@ namespace TODO
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<TODOContext>(options => options
+        .AddDbContext<FactoryContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
