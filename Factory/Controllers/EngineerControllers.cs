@@ -37,11 +37,11 @@ namespace Factory.Controllers
 
     public ActionResult Details(int id)
     {
-        var thisEngineer = _db.Engineers
-          .Include(engineer => engineer.Machines)
-          .ThenInclude(join => join.Machine)
-          .FirstOrDefault(engineer => engineer.EngineerId == id);
-        return View(thisEngineer);
+      var thisEngineer = _db.Engineers
+        .Include(engineer => engineer.Machines)
+        .ThenInclude(join => join.Machine)
+        .FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
     }
 
     public ActionResult Edit(int id)
@@ -63,10 +63,17 @@ namespace Factory.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult AddMachine(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      return View(thisEngineer);
+    }
+
     public ActionResult Delete(int id)
     {
-        var thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
-        return View(thisEngineer);
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      return View(thisEngineer);
     }
 
     [HttpPost, ActionName("Delete")]

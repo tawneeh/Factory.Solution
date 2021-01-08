@@ -14,15 +14,18 @@ namespace Factory.Controllers
     {
       _db = db; 
     }
+
     public ActionResult Index()
     {
       List<Machine> model = _db.Machines.ToList();
       return View(model);
     }
+
     public ActionResult Create()
     {
       return View();
     }
+
     [HttpPost]
     public ActionResult Create(Machine machine)
     {
@@ -30,6 +33,7 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
     public ActionResult Details(int id)
     {
       var thisMachine = _db.Machines
@@ -38,12 +42,14 @@ namespace Factory.Controllers
           .FirstOrDefault(machines => machines.MachineId == id);
       return View(thisMachine);
     }
+
     public ActionResult Edit(int id)
     { 
       var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
       return View(thisMachine);
     }
+
     [HttpPost]
     public ActionResult Edit(Machine machine, int EngineerId)
     {
@@ -55,11 +61,20 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult AddEngineer(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
+    }
+
     public ActionResult Delete(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
       return View(thisMachine);
     }
+
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
