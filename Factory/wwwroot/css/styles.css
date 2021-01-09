@@ -68,3 +68,9 @@ li {
   color: whitesmoke;
   text-decoration: none;
 }
+
+.form {
+  color: #654e8a;
+  font-family: Times;
+  margin-left: 10px;
+}

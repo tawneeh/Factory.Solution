@@ -8,11 +8,11 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    @Html.LabelFor(model => model.Name, null, new { @class="form" })
+    @Html.TextBoxFor(model => model.Name, null, new { @class="form" })
 
-    @Html.LabelFor(model => model.Status)
-    @Html.TextBoxFor(model => model.Status)
+    @Html.LabelFor(model => model.Status, null, new { @class="form" })
+    @Html.TextBoxFor(model => model.Status, null, new { @class="form" })
 
     <input type="submit" value="Add new Machine" class="btn btn-success btn-xs" />
 }
