@@ -9,13 +9,15 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Status): @Html.DisplayFor(model => model.Status)</h3>
 
+<br>
+
 @if(@Model.Engineers.Count == 0)
 {
-  <p>There are no Engineers qualified to work on this Machine...</p>
+  <h4>There are no Engineers qualified to work on this Machine...</h4>
 }
 else
 {
-  <h4>Engineers that are licensed to work on this Machine:</h4>
+  <h3>Engineers that are licensed to work on this Machine:</h3>
   <ul>
   @foreach(var join in Model.Engineers)
   {
