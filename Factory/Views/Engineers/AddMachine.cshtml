@@ -8,11 +8,11 @@
 
 <h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Action", "Controller", FormMethod.Post, new { style = "margin-right:10px", @class = "formbox" }))
 {
   @Html.HiddenFor(model => model.EngineerId)
-  @Html.Label("Select Machine", null, new { @class="form" })
-  @Html.DropDownList("MachineId", null, null, new { @class="form" })
+  @Html.Label("Select Machine", null, new { @class="label" })
+  @Html.DropDownList("MachineId", null, null, new { @class="input" })
 
   <input type="submit" value="Save" class="btn btn-success btn-xs" />
 }

@@ -8,14 +8,14 @@
 
 <h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Action", "Controller", FormMethod.Post, new { style = "margin-right:10px", @class = "formbox" }))
 {
   @Html.HiddenFor(model => model.EngineerId)
-  @Html.LabelFor(model => model.Name, null, new { @class="form" })
-  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.Name, null, new { @class="label" })
+  @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class="input" } })
 
-  @Html.LabelFor(model => model.HireDate, null, new { @class="form" })
-  @Html.EditorFor(model => model.HireDate)
+  @Html.LabelFor(model => model.HireDate, null, new { @class="label" })
+  @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class="input" } })
 
   <input type="submit" value="Save" class="btn btn-success btn-xs" />
 }

@@ -69,9 +69,23 @@ li {
   text-decoration: none;
 }
 
-.form {
+.input {
+  color: #654e8a;
+  background-color: whitesmoke;
+  font-family: Times;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+
+.label {
   color: #654e8a;
   font-family: Times;
+  font-size: small;
+}
+
+.formbox {
   margin-left: 10px;
   margin-right: 5px;
 }
