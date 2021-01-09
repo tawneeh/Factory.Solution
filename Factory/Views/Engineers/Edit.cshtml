@@ -10,14 +10,14 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.EngineerId)
-    @Html.LabelFor(model => model.Name, null, new { @class="form" })
-    @Html.EditorFor(model => model.Name)
+  @Html.HiddenFor(model => model.EngineerId)
+  @Html.LabelFor(model => model.Name, null, new { @class="form" })
+  @Html.EditorFor(model => model.Name)
 
-    @Html.LabelFor(model => model.HireDate, null, new { @class="form" })
-    @Html.EditorFor(model => model.HireDate)
+  @Html.LabelFor(model => model.HireDate, null, new { @class="form" })
+  @Html.EditorFor(model => model.HireDate)
 
-    <input type="submit" value="Save" class="btn btn-success btn-xs" />
+  <input type="submit" value="Save" class="btn btn-success btn-xs" />
 }
 
 <p>@Html.ActionLink("Back to list", "Index", null, null, new { @class="button" })</p>
