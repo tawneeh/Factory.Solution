@@ -8,7 +8,7 @@
 
 <h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm("Action", "Controller", FormMethod.Post, new { style = "margin-right:10px", @class = "formbox" }))
+@using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
   @Html.LabelFor(model => model.Name, null, new { @class="label" })
