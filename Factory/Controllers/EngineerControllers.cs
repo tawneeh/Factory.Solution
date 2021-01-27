@@ -101,3 +101,18 @@ namespace Factory.Controllers
     }
   }
 }
+
+// https://github.com/LondresRi/Classroom-Notes-and-Demos/blob/main/c-sharp/week-5c-Wednesday/2-DisplayNonSelectedRelations.cs
+// try to prevent the same machine being added twice
+
+    // public ActionResult AddMachine(int id)
+    // {
+    //   var thisEngineer = _db.Engineers.FirstOrDefault(EngineersController => EngineersController.EngineerId == id);
+    //   var selectedMachines = _db.EngineerMachine
+    //     .Where(engineerMachine => engineerMachine.EngineerId == id)
+    //     .Select(machine => machine.MachineId).ToList();
+    //   ViewBag.Machines = _db.Machines
+    //     .Where(machine => !selectedMachines.Contains(machine.MachineId))
+    //     .Select(machine => machine);
+    //   return View(); // View() or View(thisEngineer)
+    // }
