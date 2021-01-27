@@ -7,16 +7,9 @@
 <h1>@Html.ActionLink("Manage Engineers", "Index", "Engineers")</h1>
 <h1>@Html.ActionLink("Manage Machines", "Index", "Machines")</h1>
 
-<h3>Current Engineers:</h3>
-@foreach (var engineer in ViewBag.Engineer)
-{
-  <li>@engineer.Name</li>
-}
-<h3>Current Factory Machines:</h3>
-@foreach (var machine in ViewBag.Machine)
-{
-  <li>@machine.Name</li>
-}
+<h3>@Model["engineer"].Count Engineers Currently</h3>
+<h3>@Model["machine"].Count Factory Machines Currently</h3>
+<br>
 
 <center>
   <img src='~/img/photo1.png' alt='Silly String' width="400px" height="400px" style="vertical-align:middle;margin:50px 50px" />
